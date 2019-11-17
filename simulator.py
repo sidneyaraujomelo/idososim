@@ -1,6 +1,8 @@
 from argparse import ArgumentParser
 from random import random
 from collections import OrderedDict
+from sklearn.neural_network import MLPClassifier
+import numpy as np
 
 
 def dummyEventList(n, type_data, dim):
@@ -12,12 +14,21 @@ def dummyEventList(n, type_data, dim):
         t_l = t
     return event_list
 
+def trainRiskMap():
+    poss = []
+    labels = []
+    with open('walks.txt', 'r') as f:
+        for l in f.readlines():
+            poss.append([int(x) for x in l.split('\t')[:15]])
+            labels.append(int(l.split('\t')[-1]))
+    
+    model = MLPClassifier(max_iter=1000)
+    model.fit(poss, labels)
 
-def dummyRiskMap(pos):
-    if random() > 0.5:
-        return True
-    else:
-        return False
+    return model
+
+def dummyRiskMap(pos, model):
+    return model.predict(np.array(pos).reshape(1, -1))[0]
 
 def dummyAccelClassifier(accel_list):
     if random() > 0.9:
@@ -46,10 +57,10 @@ def updateWindow(window, k, v, delta):
 
 
 def main():
-    args = ArgumentParser()
-    args.add_argument("gps_sim_file", type=str)
+    # args = ArgumentParser()
+    # args.add_argument("gps_sim_file", type=str)
 
-    parser = args.parse_args()
+    # parser = args.parse_args()
 
     gps_sim = dummyEventList(10, "GPS", 2)
     print(gps_sim)
@@ -74,10 +85,12 @@ def main():
         print(f"Accelerometer window:")
         for wk, wv in window.items():
             print(f"\t{wk}: {wv[1]}")
-        
-        dummyPosStatus = dummyRiskMap(pos)
+        pos = [0,17,22,7,15,18,21,6,14,19,16,9,10,4,5] # NO CAMINHO
+        # pos = [0,17,22,7,15,40,21,31,14,25,16,9,52,4,5] # FORA DO CAMINHO
+        model = trainRiskMap()
+        dummyPosStatus = not(dummyRiskMap(pos, model))
         dummyAccelStatus = dummyAccelClassifier(window.values())
-
+        
         if dummyPosStatus and dummyAccelStatus:
             report[k] = "Risco alto! Queda em ambiente inseguro detectada!"
         elif dummyPosStatus:

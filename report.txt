@@ -1,20 +1,20 @@
-0.58: Atenção! Queda detectada!
-0.60: OK.
-0.70: OK.
-1.31: Idoso em local inseguro!
-1.32: Idoso em local inseguro!
-1.93: OK.
-1.99: Idoso em local inseguro!
-2.01: OK.
-2.41: Idoso em local inseguro!
-2.43: Risco alto! Queda em ambiente inseguro detectada!
-2.48: Idoso em local inseguro!
-3.01: Idoso em local inseguro!
-3.18: Idoso em local inseguro!
-3.20: Idoso em local inseguro!
-3.48: Idoso em local inseguro!
-3.53: OK.
-4.00: OK.
-4.09: Risco alto! Queda em ambiente inseguro detectada!
-4.28: Idoso em local inseguro!
-4.89: OK.
+0.13: OK.
+0.41: OK.
+0.66: OK.
+0.77: OK.
+1.06: OK.
+1.28: OK.
+1.35: OK.
+1.65: OK.
+1.86: OK.
+2.41: OK.
+2.52: OK.
+2.52: OK.
+2.67: OK.
+2.87: OK.
+3.05: OK.
+3.65: OK.
+3.73: OK.
+3.79: OK.
+3.86: OK.
+4.37: OK.
