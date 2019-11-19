@@ -1,4 +1,3 @@
-from argparse import ArgumentParser
 from random import random
 from collections import OrderedDict
 from sklearn.neural_network import MLPClassifier
@@ -58,26 +57,13 @@ def updateWindow(window, k, v, delta):
 
 
 def main():
-    # args = ArgumentParser()
-    # args.add_argument("gps_sim_file", type=str)
-
-    # parser = args.parse_args()
-    '''
     gps_sim = DeviceEventSim(10, "GPS", 3)
     print(gps_sim.dict)
-  
+
     accel_sim = DeviceEventSim(10, "Accelerometer", 4)
     print(accel_sim.dict)
     
     event_sim = mergeEventList(gps_sim.dict, accel_sim.dict)
-    '''
-    gps_sim = dummyEventList(10, "GPS", 2)
-    print(gps_sim)
-    
-    accel_sim = dummyEventList(10, "Accelerometer", 3)
-    print(accel_sim)
-    
-    event_sim = mergeEventList(gps_sim, accel_sim)
     
     print(event_sim)
     pos = None
@@ -85,7 +71,6 @@ def main():
     max_delta_window = 0.5
     report = OrderedDict()
     for k,v in event_sim.items():
-
         print(f"=========== Timestamp: {k} ===========")
         if v[0] == "GPS":
             pos = v[1]

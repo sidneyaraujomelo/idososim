@@ -1,20 +1,17 @@
-0.13: OK.
-0.41: OK.
+0.00: OK.
+0.11: OK.
+0.15: Atenção! Queda detectada!
+0.19: Atenção! Queda detectada!
+0.22: OK.
+0.29: OK.
+0.33: OK.
+0.37: OK.
+0.45: Atenção! Queda detectada!
+0.48: OK.
+0.51: OK.
+0.55: OK.
+0.63: OK.
 0.66: OK.
-0.77: OK.
-1.06: OK.
-1.28: OK.
-1.35: OK.
-1.65: OK.
-1.86: OK.
-2.41: OK.
-2.52: OK.
-2.52: OK.
-2.67: OK.
-2.87: OK.
-3.05: OK.
-3.65: OK.
-3.73: OK.
-3.79: OK.
-3.86: OK.
-4.37: OK.
+0.67: Atenção! Queda detectada!
+0.75: OK.
+0.83: OK.

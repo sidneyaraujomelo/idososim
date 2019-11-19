@@ -12,7 +12,7 @@ import tkinter.filedialog as tkFileDialog
 
 class DeviceEventSim:
     def __init__(self, n, type_data, dim):
-        self.n = n;
+        self.n = n
         self.type_data = type_data
         self.dim = dim
 
@@ -47,6 +47,6 @@ class DeviceEventSim:
             sensor = []
             for i in range(1, self.dim):
                 sensor.append(elem[i])
-            dict_aux[elem[0]] = [self.type_data, sensor]
+            dict_aux[float(elem[0])] = [self.type_data, sensor]
 
         return dict_aux
