@@ -11,8 +11,7 @@ import tkinter
 import tkinter.filedialog as tkFileDialog
 
 class DeviceEventSim:
-    def __init__(self, n, type_data, dim):
-        self.n = n
+    def __init__(self, type_data, dim):
         self.type_data = type_data
         self.dim = dim
 
@@ -35,8 +34,8 @@ class DeviceEventSim:
         read_data = file.read().split("\n")
         file.close()
     
-        data_aux = ['']* (self.n)
-        for i in range(self.n):
+        data_aux = ['']*len(read_data)
+        for i in range(len(read_data)):
             data_aux[i] = read_data[i].split(";")
             
         return data_aux

@@ -57,10 +57,10 @@ def updateWindow(window, k, v, delta):
 
 
 def main():
-    gps_sim = DeviceEventSim(10, "GPS", 3)
+    gps_sim = DeviceEventSim("GPS", 3)
     print(gps_sim.dict)
 
-    accel_sim = DeviceEventSim(10, "Accelerometer", 4)
+    accel_sim = DeviceEventSim("Accelerometer", 4)
     print(accel_sim.dict)
     
     event_sim = mergeEventList(gps_sim.dict, accel_sim.dict)
